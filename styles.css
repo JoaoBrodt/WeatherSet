@@ -1,0 +1,17 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+.card-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.content {
+  justify-content: center;
+  display: flex;
+  margin-top: 5%;
+  text-align: center;
+}
+.content__conteudo {
+  display: inline-block;
+}
