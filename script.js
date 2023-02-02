@@ -20,14 +20,6 @@ const api = {
   units: "metric",
 };
 
-searchResults("Ribeirão Preto");
-
-botao.addEventListener("click", () => {
-  let city = defineCidade.value;
-  searchResults(city);
-  defineCidade.value = "";
-});
-
 function searchResults(city) {
   fetch(
     `${api.base}weather?q=${city}&lang=${api.lang}&units=${api.units}&APPID=${api.key}`
@@ -37,9 +29,6 @@ function searchResults(city) {
         throw new Error(`http error: status ${response.status}`);
       }
       return response.json();
-    })
-    .catch((error) => {
-      alert(error.message);
     })
     .then((response) => {
       defineClima(response);
@@ -65,3 +54,21 @@ function criaData() {
   let ano = now.getFullYear();
   return `${dia} de ${mes} de ${ano}`;
 }
+
+function selecionaCidade() {
+  let city = defineCidade.value;
+  searchResults(city);
+  defineCidade.value = "";
+}
+
+searchResults("Ribeirão Preto");
+
+botao.addEventListener("click", selecionaCidade);
+
+botao.addEventListener("keydown", (evento) => {
+  if (evento.key === "Enter") selecionaCidade();
+});
+
+defineCidade.addEventListener("keydown", (evento) => {
+  if (evento.key === "Enter") selecionaCidade();
+});
