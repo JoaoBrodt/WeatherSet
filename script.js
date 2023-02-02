@@ -72,3 +72,6 @@ botao.addEventListener("keydown", (evento) => {
 defineCidade.addEventListener("keydown", (evento) => {
   if (evento.key === "Enter") selecionaCidade();
 });
+
+
+
