@@ -15,3 +15,8 @@
 .content__conteudo {
   display: inline-block;
 }
+.input-group {
+  justify-content: center;
+  display: flex;
+  margin: 0.5em 0;
+}

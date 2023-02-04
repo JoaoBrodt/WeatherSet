@@ -47,11 +47,19 @@
         </div>
 
         <div class="card-footer">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Cidade" id=defineCidade />
+          <div class="input-group">
+            <form action="submit" id="formularioClima" method="post">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Cidade"
+                id="defineCidade"
+              />
+            </form>
             <button
               class="btn btn-outline-secondary"
-              type="button"
+              form="formularioClima"
+              type="submit"
               id="button-addon2"
             >
               <svg

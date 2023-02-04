@@ -6,7 +6,7 @@ const sensacao = document.querySelector(".sensacao");
 const humidade = document.querySelector(".humidade");
 const vento = document.querySelector(".vento");
 const imagem = document.querySelector(".content-img");
-const botao = document.getElementById("button-addon2");
+const formulario = document.getElementById("formularioClima");
 const defineCidade = document.getElementById("defineCidade");
 const unidade = {
   celcius: "°C",
@@ -55,23 +55,11 @@ function criaData() {
   return `${dia} de ${mes} de ${ano}`;
 }
 
-function selecionaCidade() {
-  let city = defineCidade.value;
+formulario.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  city = defineCidade.value;
   searchResults(city);
   defineCidade.value = "";
-}
+});
 
 searchResults("Ribeirão Preto");
-
-botao.addEventListener("click", selecionaCidade);
-
-botao.addEventListener("keydown", (evento) => {
-  if (evento.key === "Enter") selecionaCidade();
-});
-
-defineCidade.addEventListener("keydown", (evento) => {
-  if (evento.key === "Enter") selecionaCidade();
-});
-
-
-
